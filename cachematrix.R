@@ -1,8 +1,8 @@
 ## Will inverse a matrix and cache the result.
 
-## Takes a matrix and creates a special "matrix" for use with the cacheInverseMatrix.
+## Takes a matrix and creates a special "matrix" for use with the cacheSolve.
 
-makeMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
     x <<- y
@@ -17,9 +17,9 @@ makeMatrix <- function(x = matrix()) {
 }
 
 
-## Takes a "matrix" created by makeMatrix and returns its inverse.  If the "matrix" has been inversed before, then a cached inverse is returned.
+## Takes a "matrix" created by makeCacheMatrix and returns its inverse.  If the "matrix" has been inversed before, then a cached inverse is returned.
 
-cacheInverseMatrix <- function(x, ...) {
+cacheSolve <- function(x, ...) {
   m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
